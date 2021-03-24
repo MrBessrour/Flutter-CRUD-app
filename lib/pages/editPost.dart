@@ -11,7 +11,8 @@ class EditPost extends StatefulWidget {
 }
 
 class _EditPostState extends State<EditPost> {
-  Map newPost = {};
+  Post newPost = Post.empty();
+
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
   Widget _titleBuilder() {
@@ -25,7 +26,7 @@ class _EditPostState extends State<EditPost> {
         },
         onSaved: (String value) {
           print('saved $value');
-          newPost['title'] = value;
+          newPost.title = value;
         });
   }
 
@@ -40,7 +41,7 @@ class _EditPostState extends State<EditPost> {
         },
         onSaved: (String value) {
           print('saved $value');
-          newPost['description'] = value;
+          newPost.description = value;
         });
   }
 
@@ -69,7 +70,8 @@ class _EditPostState extends State<EditPost> {
                     }
                     _globalKey.currentState.save();
 
-                    await httpService.updatePost(widget.post.id, newPost);
+                    await httpService.updatePost(
+                        widget.post.id, newPost.toJson());
                     Navigator.of(context).pop();
                   },
                   child: Text('Update'),

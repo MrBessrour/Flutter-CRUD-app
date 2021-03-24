@@ -1,3 +1,4 @@
+import 'package:crud/models/Post.dart';
 import 'package:crud/services/HttpSevice.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class NewPost extends StatefulWidget {
 class _NewPostState extends State<NewPost> {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
-  Map post = {};
+  Post post = Post.empty();
 
   Widget _titleBuilder() {
     return TextFormField(
@@ -21,7 +22,7 @@ class _NewPostState extends State<NewPost> {
         },
         onSaved: (String value) {
           print('saved $value');
-          post['title'] = value;
+          post.title = value;
         });
   }
 
@@ -35,7 +36,7 @@ class _NewPostState extends State<NewPost> {
         },
         onSaved: (String value) {
           print('saved $value');
-          post['description'] = value;
+          post.description = value;
         });
   }
 
@@ -64,7 +65,7 @@ class _NewPostState extends State<NewPost> {
                     }
                     _globalKey.currentState.save();
                     print('$post');
-                    await httpService.newPost(post);
+                    await httpService.newPost(post.toJson());
                     Navigator.of(context).pop();
                   },
                   child: Text('save'),

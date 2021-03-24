@@ -4,7 +4,7 @@ import 'package:crud/models/Post.dart';
 import 'package:http/http.dart';
 
 class HttpService {
-  final postUrl = "http://192.168.1.5:8000/post";
+  final postUrl = "The API link here";
   final Map<String, String> _headers = {"Content-type": "application/json"};
 
   Future<void> deletePost(String id) async {

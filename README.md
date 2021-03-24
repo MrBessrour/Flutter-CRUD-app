@@ -1,16 +1,14 @@
-# crud
+<h2>Flutter CRUD app</h2>
+<hr>
+i have made this in order to learn the flutter HTTP package [Link to the package](https://pub.dev/packages/http) </br>
+the app consume a ExpressJs Restful API that i have made before [found here](https://github.com/MrBessrour/Express-MongoDB-Restful-API).</br>
+the api use different HTTP methods ( GET, POST, PATCH, and DELETE )</br>
 
-A new Flutter project.
+in order to install the http package for the first time :
+```
+pub get
+```
 
-## Getting Started
+if you found this helpful somehow , credit me as [Brahim Bessrour](https://www.youtube.com/channel/UC9uUuLUFIvkoHsPJbVyUJqg) . <br/>
+play my latest game [here](https://play.google.com/store/apps/details?id=bes.dodgy.walls) .
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
